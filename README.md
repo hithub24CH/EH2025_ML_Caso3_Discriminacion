@@ -59,4 +59,6 @@ Capturas de cada etapa guardadas en `Capturas/`:
 ![Importancia de variables](imagenes/grafico_importancia.png)
 ![Clustering](imagenes/grafico_clustering.png)
 
+**Fuente:** Instituto Nacional de Estadística, Encuesta de Hogares 2025 - http://anda.ine.gob.bo/index.php/catalog/256. Fecha de acceso: septiembre de 2026.
+
 **Autor:** JOSE CHIPANA · Educación Superior · Análisis de Datos Masivos con ML · Sesión 2 · Caso 3

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuestionario Ciencia de Datos — Respuestas verificadas (García, Molina et al.)</title>
+<style>
+  :root { --rojo:#a93226; --azul:#1f4e79; --ok:#1e8449; --gris:#4a4a4a; --fondo:#f7f8fa; --borde:#dcdde1; }
+  * { box-sizing: border-box; }
+  body { font-family:"Segoe UI",Calibri,Arial,sans-serif; color:var(--gris); margin:0; background:var(--fondo); line-height:1.55; }
+  .head { background:linear-gradient(135deg,var(--azul),#2e6da4); color:#fff; padding:34px 24px; text-align:center; }
+  .head h1 { margin:0 0 6px; font-size:1.7em; }
+  .head p { margin:4px 0; opacity:.95; font-size:.95em; }
+  .wrap { max-width:920px; margin:24px auto 60px; padding:0 18px; }
+  .q { background:#fff; border:1px solid var(--borde); border-left:6px solid var(--azul); border-radius:8px; padding:16px 20px; margin:18px 0; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  .q .num { display:inline-block; background:var(--rojo); color:#fff; font-weight:700; padding:2px 12px; border-radius:14px; font-size:.85em; }
+  .q h3 { margin:10px 0 6px; color:var(--azul); font-size:1.08em; }
+  .opts { margin:8px 0 6px 4px; }
+  .opts p { margin:3px 0; font-size:.95em; }
+  .corr { list-style:none; padding:8px 14px; margin:6px 0; border-radius:6px; background:#eaf6ee; border:1px solid #bfe0c9; font-weight:600; color:var(--ok); }
+  .donde { margin:10px 0; padding:10px 14px; background:#eef3fb; border:1px solid #bcd0ea; border-radius:6px; }
+  .donde b { color:var(--azul); }
+  .donde .quote { font-style:italic; color:#2c3e50; margin-top:4px; padding-left:12px; border-left:3px solid var(--azul); }
+  .porque { margin:10px 0; padding:10px 14px; background:#fdf3f0; border:1px solid #efcdc4; border-radius:6px; font-size:.95em; }
+  .porque b { color:var(--rojo); }
+  .porque ul, .donde ul { margin:6px 0 2px 20px; }
+  .resumen { background:#fff; border:1px solid var(--borde); border-radius:8px; overflow:hidden; margin:20px 0; }
+  .resumen table { border-collapse:collapse; width:100%; font-size:.95em; }
+  .resumen th, .resumen td { border:1px solid var(--borde); padding:8px 10px; text-align:left; }
+  .resumen th { background:var(--azul); color:#fff; }
+  .foot { text-align:center; color:#8a8a8a; font-size:.82em; margin-top:40px; border-top:1px solid var(--borde); padding-top:14px; }
+  .letra { font-weight:700; color:var(--rojo); }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <h1>Cuestionario verificado — Ciencia de Datos</h1>
+  <p>10 preguntas con respuesta correcta, justificación textual y ubicación en el documento</p>
+  <p><strong>Fuente:</strong> <em>Ciencia de datos. Técnicas analíticas y aprendizaje estadístico</em> — García, Molina, Berlanga y Patricio (Alfaomega) · Word <code>libros/627adac0-...docx</code></p>
+</div>
+
+<div class="wrap">
+
+  <div class="resumen">
+    <table>
+      <tr><th>#</th><th>Respuesta</th><th>Tema</th><th>Párrafo(s) de sustento</th></tr>
+      <tr><td>1</td><td>a</td><td>Objetivo de la ciencia de datos</td><td>141</td></tr>
+      <tr><td>2</td><td>c</td><td>Curva ROC</td><td>2766</td></tr>
+      <tr><td>3</td><td>a</td><td>KDD</td><td>383–392</td></tr>
+      <tr><td>4</td><td>d</td><td>Modelos descriptivos</td><td>536</td></tr>
+      <tr><td>5</td><td>c</td><td>Clustering</td><td>3150, 536</td></tr>
+      <tr><td>6</td><td>b</td><td>Clasificación vs regresión</td><td>537, 572</td></tr>
+      <tr><td>7</td><td>d</td><td>k-means</td><td>3150</td></tr>
+      <tr><td>8</td><td>d</td><td>Clasificador bayesiano "naive"</td><td>2301, 603</td></tr>
+      <tr><td>9</td><td>c</td><td>SVM</td><td>3942</td></tr>
+      <tr><td>10</td><td>b</td><td>Backpropagation</td><td>4185–4195</td></tr>
+    </table>
+  </div>
+
+  <!-- Q1 -->
+  <div class="q">
+    <span class="num">Pregunta 1</span>
+    <h3>¿Cuál es el objetivo fundamental de la ciencia de datos según el texto?</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> La búsqueda de modelos que describan patrones y comportamientos para tomar decisiones o hacer predicciones. ✔</p>
+      <p><span class="letra">b.</span> La creación exclusiva de infraestructuras para la captura de datos en tiempo real.</p>
+      <p><span class="letra">c.</span> La limpieza manual de bases de datos relacionales sin uso de algoritmos.</p>
+      <p><span class="letra">d.</span> El almacenamiento masivo de datos en sistemas de archivos distribuidos.</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: a</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafo 141 del documento:
+      <div class="quote">"La ciencia de datos es hoy en día la herramienta fundamental para la explotación de datos y la generación de conocimiento. Entre los objetivos que persigue se encuentra la búsqueda de modelos que describan patrones y comportamientos a partir de los datos con el fin de tomar decisiones o hacer predicciones."</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>b: la infraestructura de captura en tiempo real corresponde a la tecnología <em>big data</em>, no al objetivo de la ciencia de datos (el párr. 339 atribuye ese fin al big data).</li>
+        <li>c: la limpieza es un paso del proceso (KDD), no un fin; además no es "manual" ni excluye algoritmos.</li>
+        <li>d: el almacenamiento distribuido es parte de la infraestructura de big data, no el objetivo de generar conocimiento/modelos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q">
+    <span class="num">Pregunta 2</span>
+    <h3>La curva ROC es una técnica de evaluación que permite:</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> Medir la correlación de Pearson entre dos variables cuantitativas continuas.</p>
+      <p><span class="letra">b.</span> Calcular el error cuadrático medio de un modelo de regresión lineal.</p>
+      <p><span class="letra">c.</span> Determinar la bondad de un clasificador representando la sensibilidad frente a la especificidad. ✔</p>
+      <p><span class="letra">d.</span> Visualizar la estructura jerárquica de un árbol de decisión podado.</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: c</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafo 2766:
+      <div class="quote">"Una forma muy conveniente para determinar la bondad de un clasificador es utilizar la curva ROC. Es una gráfica en la que se representa la sensibilidad frente a la especificidad en función del umbral de discriminación."</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>a: la correlación de Pearson es una medida de asociación lineal entre variables, no una técnica de evaluación de clasificadores.</li>
+        <li>b: el ECM evalúa regresión (error cuadrático medio), no clasificadores.</li>
+        <li>d: la estructura de un árbol se visualiza como árbol de decisión, no con una curva ROC.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q">
+    <span class="num">Pregunta 3</span>
+    <h3>El término KDD (Knowledge Discovery in Databases) se define como:</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> El proceso completo de extracción de información, preparación de datos e interpretación de resultados. ✔</p>
+      <p><span class="letra">b.</span> Una técnica de visualización interactiva para redes sociales.</p>
+      <p><span class="letra">c.</span> Un algoritmo específico para el entrenamiento de redes neuronales profundas.</p>
+      <p><span class="letra">d.</span> Un sistema de gestión de bases de datos desarrollado a finales del siglo XX.</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: a</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafos 383–392 (proceso de descubrimiento de conocimiento):
+      <div class="quote">"De forma esquemática el proceso de descubrimiento de conocimiento sigue los siguientes pasos: Formular el problema… Preparar datos para análisis… Selección de modelo, construcción y entrenamiento… Evaluar lo aprendido… Integrar la base de conocimiento." Y en párr. 392: "Una vez se tienen los datos adecuados se procede a la minería de datos… y tras este proceso llega el análisis de resultados, con lo que se obtiene el conocimiento pretendido."</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>b: la visualización es un medio de presentación, no la definición del proceso KDD.</li>
+        <li>c: KDD no es un algoritmo; los algoritmos (redes, árboles, etc.) son herramientas usadas dentro del proceso.</li>
+        <li>d: no es un DBMS; es el proceso metodológico de descubrir conocimiento desde las bases de datos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q">
+    <span class="num">Pregunta 4</span>
+    <h3>¿Qué caracteriza a los modelos descriptivos en el análisis de datos?</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> Buscan aproximar valores futuros a partir de datos históricos etiquetados.</p>
+      <p><span class="letra">b.</span> Se utilizan principalmente para realizar clasificaciones binarias de tipo spam.</p>
+      <p><span class="letra">c.</span> Requieren obligatoriamente una variable de salida numérica para funcionar.</p>
+      <p><span class="letra">d.</span> Tienen como fin hallar patrones o resumir los datos sin pretender predecir nuevos valores. ✔</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: d</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafo 536:
+      <div class="quote">"Modelos descriptivos. Su objetivo no es otro que hallar patrones o resumir los datos. No pretenden predecir nuevos datos a partir de la información recabada."</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>a: aproximar valores futuros describe a los modelos predictivos (párr. 537), no a los descriptivos.</li>
+        <li>b: la clasificación spam es una tarea predictiva supervisada, no descriptiva.</li>
+        <li>c: los modelos descriptivos no requieren salida; trabajan con datos sin etiquetar (agrupamiento, asociación, correlación).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q">
+    <span class="num">Pregunta 5</span>
+    <h3>La tarea de clustering o agrupamiento consiste en:</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> Asignar una etiqueta predefinida a una nueva instancia de datos.</p>
+      <p><span class="letra">b.</span> Estimar una función real para asignar un valor numérico a una instancia.</p>
+      <p><span class="letra">c.</span> Formar grupos "naturales" a partir de datos no etiquetados, maximizando la similitud intragrupo. ✔</p>
+      <p><span class="letra">d.</span> Identificar relaciones causa-efecto entre variables nominales.</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: c</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafos 536 y 3150:
+      <div class="quote">párr. 536: entre las técnicas de modelos descriptivos cita "el agrupamiento". párr. 3150: "Uno de los algoritmos más utilizados para hacer clustering es el k-medias… cada una de las instancias… es asignada al centro… de cada clúster", lo que forma grupos por similitud.</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>a: asignar una etiqueta predefinida es clasificación supervisada, no agrupamiento.</li>
+        <li>b: estimar un valor numérico es regresión.</li>
+        <li>d: el clustering agrupa por similitud; no establece causalidad.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q">
+    <span class="num">Pregunta 6</span>
+    <h3>¿Cuál es la diferencia principal entre las tareas de clasificación y regresión?</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> La clasificación es una técnica no supervisada y la regresión es supervisada.</p>
+      <p><span class="letra">b.</span> La clasificación predice etiquetas nominales (clases) y la regresión predice valores numéricos. ✔</p>
+      <p><span class="letra">c.</span> No existe diferencia técnica, ambas buscan resumir patrones históricos.</p>
+      <p><span class="letra">d.</span> La clasificación solo trabaja con atributos continuos y la regresión con discretos.</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: b</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafos 537 y 572:
+      <div class="quote">párr. 537: "La regresión y la clasificación son técnicas comúnmente usadas en este tipo de modelos [predictivos]… los datos van acompañados de una salida (clase, categoría o valor numérico)". párr. 572: la clasificación busca un "clasificador" que exponga la correspondencia hacia clases (S).</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>a: ambas son tareas supervisadas (predictivas); el agrupamiento no supervisado es el clustering.</li>
+        <li>c: sí existe diferencia: salida categórica vs. numérica.</li>
+        <li>d: es al revés de lo usual; la clasificación puede usar atributos de todo tipo.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q">
+    <span class="num">Pregunta 7</span>
+    <h3>El algoritmo k-medias (k-means) es un método de:</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> Reducción de dimensionalidad basado en componentes principales (PCA).</p>
+      <p><span class="letra">b.</span> Regresión lineal multivariante para la predicción de series temporales.</p>
+      <p><span class="letra">c.</span> Clasificación probabilística que utiliza el Teorema de Bayes.</p>
+      <p><span class="letra">d.</span> Particionamiento para agrupamiento (clustering) basado en centroides. ✔</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: d</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafo 3150:
+      <div class="quote">"Uno de los algoritmos más utilizados para hacer clustering es el k-medias (k-means)… se seleccionan k elementos aleatoriamente, que representarán el centro o media de cada clúster. A continuación, cada una de las instancias… es asignada al centro…"</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>a: la reducción de dimensionalidad con PCA es otra técnica (análisis de componentes), no k-means.</li>
+        <li>b: no es regresión ni series temporales.</li>
+        <li>c: el clasificador bayesiano usa el Teorema de Bayes; k-means no es probabilístico ni de clasificación etiquetada.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q">
+    <span class="num">Pregunta 8</span>
+    <h3>¿Por qué se considera "ingenuo" (naive) al clasificador bayesiano según la teoría?</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> Porque ignora por completo los valores faltantes en la muestra de datos.</p>
+      <p><span class="letra">b.</span> Porque no requiere de un conjunto de entrenamiento para generar el modelo.</p>
+      <p><span class="letra">c.</span> Porque solo es capaz de clasificar instancias con dos posibles valores de clase.</p>
+      <p><span class="letra">d.</span> Porque asume que los atributos son condicionalmente independientes dado el valor de la clase. ✔</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: d</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafos 2301 y 603:
+      <div class="quote">párr. 2301: "una simplificación importante aparece si podemos considerar la independencia condicional de atributos (naive bayesiano), de manera que la probabilidad de un dato… se correspondería con el producto de las probabilidades de cada atributo". párr. 603 cita al "clasificador bayesiano naive" entre las técnicas bayesianas.</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>a: no es por los valores faltantes; es por la suposición de independencia.</li>
+        <li>b: sí requiere datos de entrenamiento para estimar las probabilidades a priori y condicionales.</li>
+        <li>c: puede manejar múltiples clases; la limitación es la independencia asumida, no el número de clases.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q">
+    <span class="num">Pregunta 9</span>
+    <h3>Las Máquinas de Soporte Vectorial (SVM) basan su funcionamiento en:</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> Aprender reglas lógicas del tipo "si-entonces" mediante el método de ganancia de información.</p>
+      <p><span class="letra">b.</span> Agrupar ejemplos basándose únicamente en la distancia euclídea hacia un vecino próximo.</p>
+      <p><span class="letra">c.</span> Minimizar el error en las entradas y maximizar el margen de separación entre clases. ✔</p>
+      <p><span class="letra">d.</span> Simular el comportamiento de las neuronas biológicas mediante retropropagación.</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: c</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafo 3942:
+      <div class="quote">"Para el caso linealmente separable de S, podemos encontrar un único hiperplano óptimo, para el cual, el margen entre las proyecciones de los puntos de entrenamiento de dos diferentes clases es maximizado… la frontera de decisión debe estar tan lejos de los datos de ambas clases como sea posible."</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>a: las reglas "si-entonces" con ganancia de información corresponden a árboles de decisión.</li>
+        <li>b: agrupar por distancia al vecino próximo es k-NN / clustering, no SVM.</li>
+        <li>d: simular neuronas con retropropagación es de redes neuronales.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q">
+    <span class="num">Pregunta 10</span>
+    <h3>En las redes neuronales artificiales, el algoritmo de "Backpropagation" se utiliza para:</h3>
+    <div class="opts">
+      <p><span class="letra">a.</span> Dividir el conjunto de datos original en muestras de entrenamiento y validación.</p>
+      <p><span class="letra">b.</span> El proceso de entrenamiento supervisado mediante la modificación de pesos para reducir el error. ✔</p>
+      <p><span class="letra">c.</span> La inicialización aleatoria de los umbrales de activación en la capa de entrada.</p>
+      <p><span class="letra">d.</span> Identificar automáticamente el número óptimo de capas ocultas en la red.</p>
+    </div>
+    <div class="corr">✅ Respuesta correcta: b</div>
+    <div class="donde">
+      <b>📖 ¿Dónde dice eso?</b> Párrafos 4185 y 4195:
+      <div class="quote">párr. 4185: "Proceso de entrenamiento (retropropagación)". párr. 4195: "El método de descenso de gradiente consiste en modificar los parámetros de la red siguiendo la dirección negativa del gradiente del error." La mayoría de redes "emplean la retropropagación o backpropagation como algoritmo" (párr. 615).</div>
+    </div>
+    <div class="porque">
+      <b>❌ ¿Por qué no las otras?</b>
+      <ul>
+        <li>a: la división train/validation es un paso de preparación, no el algoritmo de entrenamiento.</li>
+        <li>c: los umbrales se ajustan durante el aprendizaje, no solo se inicializan aleatoriamente.</li>
+        <li>d: el número de capas ocultas se decide en el diseño de la arquitectura, no lo determina backpropagation.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    10/10 respuestas verificadas contra el texto del documento <em>Ciencia de datos. Técnicas analíticas y aprendizaje estadístico</em> (García, Molina, Berlanga, Patricio — Alfaomega).<br>
+    Números de párrafo correspondientes al Word <code>libros/627adac0-fb72-47dc-9f8b-6dec55392a69.docx</code>.
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte Sesión 2 · Módulo 3 — Discriminación y Seguridad Ciudadana (EH2025)</title>
+<style>
+  :root {
+    --rojo: #a93226; --azul: #1f4e79; --gris: #4a4a4a; --fondo: #f7f8fa; --borde: #dcdde1;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", Calibri, Arial, sans-serif; color: var(--gris); margin: 0; background: var(--fondo); line-height: 1.55; }
+  .portada { background: linear-gradient(135deg, var(--azul) 0%, #2e6da4 60%, #3a7bbf 100%); color: #fff; padding: 60px 40px; text-align: center; }
+  .portada h1 { margin: 0 0 6px; font-size: 2.1em; letter-spacing: .5px; }
+  .portada h2 { margin: 0 0 20px; font-size: 1.15em; font-weight: 400; opacity: .95; }
+  .portada p { margin: 4px 0; font-size: .95em; }
+  .badge { display: inline-block; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.55); padding: 4px 14px; border-radius: 20px; margin: 6px 4px; font-size: .85em; }
+  .wrap { max-width: 960px; margin: 30px auto 60px; padding: 0 20px; }
+  h2.seccion { color: var(--azul); border-bottom: 3px solid var(--rojo); padding-bottom: 6px; margin-top: 44px; font-size: 1.5em; }
+  h3 { color: var(--azul); margin-top: 26px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; background: #fff; font-size: .93em; }
+  th, td { border: 1px solid var(--borde); padding: 8px 10px; text-align: left; }
+  th { background: var(--azul); color: #fff; }
+  tr:nth-child(even) { background: #f2f5f9; }
+  .card { background: #fff; border: 1px solid var(--borde); border-left: 5px solid var(--rojo); border-radius: 6px; padding: 14px 18px; margin: 14px 0; }
+  .card.azul { border-left-color: var(--azul); }
+  img.graf { max-width: 100%; border: 1px solid var(--borde); border-radius: 6px; margin: 10px 0; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 700px) { .grid2 { grid-template-columns: 1fr; } }
+  .tag { display: inline-block; background: #eef3fb; border: 1px solid #bcd0ea; color: var(--azul); border-radius: 12px; padding: 2px 10px; font-size: .8em; margin: 2px; }
+  ul { margin: 8px 0 8px 22px; }
+  .foot { text-align: center; color: #8a8a8a; font-size: .82em; margin-top: 50px; border-top: 1px solid var(--borde); padding-top: 14px; }
+  .metricas td:first-child { font-weight: 600; }
+  .resalta { background: #fdf2e9; border: 1px solid #f0c8a8; border-radius: 6px; padding: 10px 14px; margin: 10px 0; }
+</style>
+</head>
+<body>
+
+<div class="portada">
+  <h1>Reporte Completo · Sesión 2 — Módulo 3</h1>
+  <h2>Análisis de Datos Masivos con Machine Learning</h2>
+  <p><strong>Caso 3:</strong> Discriminación y Seguridad Ciudadana en Bolivia</p>
+  <p>Encuesta de Hogares 2025 (EH2025) — Instituto Nacional de Estadística (INE) Bolivia</p>
+  <div>
+    <span class="badge">Alumno: JOSE CHIPANA</span>
+    <span class="badge">josschipanaensec24@gmail.com</span>
+    <span class="badge">Septiembre 2026</span>
+  </div>
+  <p style="margin-top:14px">
+    Repositorio: <a href="https://github.com/hithub24CH/EH2025_ML_Caso3_Discriminacion" style="color:#ffd9a0">github.com/hithub24CH/EH2025_ML_Caso3_Discriminacion</a>
+  </p>
+</div>
+
+<div class="wrap">
+
+  <h2 class="seccion" id="indice">Índice</h2>
+  <ol>
+    <li><a href="#contexto">Contexto y objetivo del caso</a></li>
+    <li><a href="#datos">Datos y fuentes (ANDA / EH2025)</a></li>
+    <li><a href="#metodologia">Metodología (CRISP-DM) y rúbrica</a></li>
+    <li><a href="#p1">Parte 1 — Obtención y preprocesamiento de datos (25%)</a></li>
+    <li><a href="#p2">Parte 2 — Análisis exploratorio y visualización (25%)</a></li>
+    <li><a href="#p3">Parte 3 — Modelos de Machine Learning (25%)</a></li>
+    <li><a href="#p4">Parte 4 — Storytelling y publicación (25%)</a></li>
+    <li><a href="#resultados">Resultados clave y hallazgos</a></li>
+    <li><a href="#recomendaciones">Recomendaciones de política pública</a></li>
+    <li><a href="#conclusiones">Conclusiones</a></li>
+    <li><a href="#entregables">Entregables y publicación GitHub</a></li>
+    <li><a href="#referencias">Referencias y citación</a></li>
+  </ol>
+
+  <h2 class="seccion" id="contexto">1. Contexto y objetivo del caso</h2>
+  <p>
+    La <strong>discriminación</strong> y la <strong>percepción de inseguridad</strong> son fenómenos sociales que afectan la
+    convivencia y el ejercicio de derechos. Bolivia cuenta con la <strong>Ley N° 045</strong> contra el racismo y toda forma de
+    discriminación. Este trabajo utiliza los microdatos de la <strong>Encuesta de Hogares 2025 (EH2025)</strong> del INE Bolivia para:
+  </p>
+  <ul>
+    <li>Cuantificar la prevalencia de la discriminación y sus <strong>motivos</strong> más frecuentes.</li>
+    <li>Analizar la <strong>victimización</strong> y la <strong>percepción de inseguridad</strong>.</li>
+    <li>Construir <strong>modelos de Machine Learning</strong> (Regresión Logística y Random Forest) para predecir
+        si una persona <em>sufrió discriminación</em> a partir de características sociodemográficas, económicas y de vivienda.</li>
+    <li>Identificar las <strong>variables más influyentes</strong> (importancia de variables y SHAP) y derivar
+        <strong>recomendaciones de política pública</strong>.</li>
+  </ul>
+  <div class="card">
+    <strong>Pregunta de investigación:</strong> ¿Qué factores sociodemográficos y geográficos están asociados con una mayor
+    percepción de discriminación y victimización en Bolivia?
+  </div>
+  <p><strong>Variables objetivo (Módulo 9 — Discriminación y seguridad):</strong></p>
+  <table>
+    <tr><th>Variable</th><th>Construcción</th><th>Prevalencia</th></tr>
+    <tr><td><code>suf_disc</code> — sufrió discriminación (target principal)</td><td>Sí en al menos 1 de los 12 motivos (<code>s09a_01a</code>–<code>l</code>)</td><td><strong>14.77%</strong> (n = 1,825)</td></tr>
+    <tr><td><code>victima</code> — fue víctima de algún delito</td><td><code>s09b_02a/b</code> ≠ 8 (ninguno)</td><td>13.25% (n = 1,638)</td></tr>
+    <tr><td><code>inseguridad</code> — se siente inseguro de noche</td><td><code>s09b_01</code> ≤ 2</td><td>49.20% (n = 6,080)</td></tr>
+    <tr><td><code>denuncia</code> — denunció formalmente</td><td><code>s09a_02</code> = 1</td><td>0.71% (n = 88)</td></tr>
+  </table>
+
+  <h2 class="seccion" id="datos">2. Datos y fuentes (ANDA / EH2025)</h2>
+  <p>
+    Los microdatos fueron obtenidos del <strong>Archivo Nacional de Datos (ANDA)</strong> del INE Bolivia (catálogo
+    <code>BOL-INE-EH-2025</code>). La EH2025 es un dataset multidimensional con información de vivienda, características
+    sociodemográficas, educación, salud, empleo, ingresos, gastos y discriminación.
+  </p>
+  <table>
+    <tr><th>Archivo</th><th>Contenido</th><th>Clave</th><th>Dimensiones</th></tr>
+    <tr><td><code>EH2025_Persona.sav</code></td><td>Datos sociodemográficos (edad, sexo, idioma, etnia)</td><td><code>ID_Persona</code>, <code>ID_Vivienda</code></td><td>39,485 × 276</td></tr>
+    <tr><td><code>EH2025_Vivienda_1.sav</code></td><td>Servicios básicos, materiales, hacinamiento</td><td><code>ID_Vivienda</code></td><td>12,726 × 64</td></tr>
+    <tr><td><code>EH2025_Discriminacion.sav</code></td><td><strong>Módulo 9:</strong> discriminación, victimización, seguridad</td><td><code>ID_Persona</code></td><td>12,358 × 44</td></tr>
+  </table>
+  <p><strong>Nota:</strong> el módulo Discriminación es un subconjunto de Persona (las 12,358 personas están en Persona).
+  El dataset analítico final fusiona los tres módulos y se guarda como <code>dataset_procesado.csv</code>.</p>
+
+  <h2 class="seccion" id="metodologia">3. Metodología (CRISP-DM) y rúbrica</h2>
+  <p>Se siguió el ciclo <strong>CRISP-DM</strong> (Comprensión del negocio y los datos → Preparación → Modelado →
+  Evaluación → Despliegue), cubriendo las 4 partes de la tarea (25% cada una):</p>
+  <table>
+    <tr><th>Parte</th><th>Contenido</th><th>Peso</th></tr>
+    <tr><td>Parte 1</td><td>Obtención y preprocesamiento de datos (limpieza, ingeniería de características, fusión)</td><td>25%</td></tr>
+    <tr><td>Parte 2</td><td>Análisis exploratorio y visualización (mapa, barras, relaciones, clustering)</td><td>25%</td></tr>
+    <tr><td>Parte 3</td><td>Modelo de Machine Learning (2 modelos, split 80/20 estratificado, métricas)</td><td>25%</td></tr>
+    <tr><td>Parte 4</td><td>Storytelling en PDF y comunicación de resultados</td><td>25%</td></tr>
+  </table>
+
+  <h2 class="seccion" id="p1">4. Parte 1 — Obtención y preprocesamiento de datos (25%)</h2>
+  <h3>4.1 Carga y recodificación</h3>
+  <ul>
+    <li>Diccionarios de recodificación: departamentos (1–9), área (Urbano/Rural), sexo (Hombre/Mujer).</li>
+    <li>12 motivos de discriminación (<code>s09a_01a</code>–<code>l</code>) mapeados a etiquetas legibles.</li>
+    <li>Lengua materna agrupada en <em>Castellano / Originaria / Extranjera</em>.</li>
+  </ul>
+  <h3>4.2 Ingeniería de características</h3>
+  <ul>
+    <li><strong>Persona:</strong> <code>sexo</code>, <code>edad</code> (recorte 0–98), <code>anios_educ</code> (años de escolaridad aproximados),
+        <code>indigena</code> (autoidentificación NPIOC/afroboliviano), <code>lengua_grupo</code>, <code>alfabetizado</code>,
+        <code>ocupado</code>/<code>desocupado</code>, ingresos en <code>log1p</code> (<code>log_ylab</code>, <code>log_yhogpc</code>),
+        <code>pobre</code>, <code>pobre_extremo</code>.</li>
+    <li><strong>Vivienda (hogar):</strong> <code>material_paredes_noble</code>, <code>piso_noble</code>, <code>agua_red</code>,
+        <code>saneamiento</code>, <code>electricidad</code>, <code>basura_recogida</code>, <code>combustible_limpio</code>,
+        <code>internet</code>, <code>vivienda_propia</code>, <code>n_cuartos</code>, <code>n_dormitorios</code>,
+        <code>hacinamiento</code> (personas/cuartos).</li>
+    <li><strong>Objetivo:</strong> <code>suf_disc</code>, <code>victima</code>, <code>inseguridad</code>, <code>denuncia</code>.</li>
+  </ul>
+  <h3>4.3 Fusión y control de calidad</h3>
+  <ul>
+    <li>Fusión por <code>folio</code> (Vivienda, <code>validate="m:1"</code>) y por <code>folio+nro</code> (Persona, <code>validate="1:1"</code>).</li>
+    <li>Dataset final: <strong>12,358 personas × 77 columnas</strong> → <code>dataset_procesado.csv</code>.</li>
+    <li>Cobertura del merge: 100% de personas con datos; 0 hogares sin vivienda.</li>
+    <li>Balance: clase minoritaria <code>suf_disc=1</code> ≈ <strong>14.77%</strong> → se usó <code>class_weight="balanced"</code>.</li>
+    <li>Faltantes: <code>log_ylab</code> 35% (imputado con mediana), variables de denuncia altamente faltantes (solo quienes sufrieron discriminación).</li>
+  </ul>
+
+  <h2 class="seccion" id="p2">5. Parte 2 — Análisis exploratorio y visualización (25%)</h2>
+  <p>Se generaron las <strong>4 visualizaciones requeridas</strong> (mapa interactivo, barras, relación y clustering) más
+  matriz de correlaciones y curvas de comportamiento.</p>
+
+  <h3>Viz 1 · Mapa interactivo de Bolivia (Folium)</h3>
+  <p>Prevalencia de discriminación por departamento (choropleth sobre <code>bolivia_departamentos.geojson</code>), con
+  tooltip de discriminación, victimización e inseguridad. Archivo: <code>mapa_discriminacion.html</code>.
+  La tasa varía entre <strong>8.2%</strong> (Tarija) y <strong>23.3%</strong> (La Paz).</p>
+
+  <h3>Viz 2 · Motivos de discriminación</h3>
+  <img class="graf" src="../imagenes/grafico_motivos_discriminacion.png" alt="Motivos de discriminación">
+  <table>
+    <tr><th>Motivo</th><th>% de personas</th></tr>
+    <tr><td>Condición económica o social</td><td>4.93%</td></tr>
+    <tr><td>Edad</td><td>4.31%</td></tr>
+    <tr><td>Color de piel</td><td>3.75%</td></tr>
+    <tr><td>Vestimenta</td><td>3.57%</td></tr>
+    <tr><td>Sexo (hombre, mujer)</td><td>2.28%</td></tr>
+    <tr><td>Idioma</td><td>1.97%</td></tr>
+    <tr><td>Pertenencia a NPIOC o afroboliviano</td><td>1.72%</td></tr>
+    <tr><td>Procedencia regional o extranjera</td><td>1.64%</td></tr>
+    <tr><td>Religión</td><td>1.40%</td></tr>
+    <tr><td>Otro motivo</td><td>1.07%</td></tr>
+    <tr><td>Discapacidad</td><td>0.61%</td></tr>
+    <tr><td>Orientación sexual e identidad de género</td><td>0.43%</td></tr>
+  </table>
+
+  <h3>Viz 3 · Relación — edad, sexo e ingreso</h3>
+  <div class="grid2">
+    <div><img class="graf" src="../imagenes/grafico_edad_sexo.png" alt="Discriminación por edad y sexo"></div>
+    <div><img class="graf" src="../imagenes/grafico_ingreso.png" alt="Discriminación e inseguridad por decil de ingreso"></div>
+  </div>
+  <ul>
+    <li>La discriminación y la victimización varían por <strong>grupo de edad</strong> y por <strong>sexo</strong>.</li>
+    <li>La inseguridad percibida es alta en los deciles de menor ingreso y decrece con el nivel socioeconómico.</li>
+  </ul>
+
+  <h3>Viz 4 · Clustering K-means + PCA</h3>
+  <div class="grid2">
+    <div><img class="graf" src="../imagenes/grafico_codo.png" alt="Método del codo"></div>
+    <div><img class="graf" src="../imagenes/grafico_clustering.png" alt="Clusters en PCA"></div>
+  </div>
+  <p>Método del codo sobre muestra de 5,000 personas → <strong>k = 4 clusters</strong> de perfiles sociodemográficos
+  (ingreso, educación, hacinamiento, pobreza, ocupación, motivos de discriminación, inseguridad), proyectados con PCA.</p>
+
+  <h3>Matriz de correlaciones</h3>
+  <img class="graf" src="../imagenes/grafico_correlaciones.png" alt="Matriz de correlaciones">
+
+  <h2 class="seccion" id="p3">6. Parte 3 — Modelos de Machine Learning (25%)</h2>
+  <h3>6.1 Definición y preparación</h3>
+  <ul>
+    <li><strong>Target:</strong> <code>suf_disc</code> (sufrió discriminación en los últimos 12 meses, Sí = 1).</li>
+    <li><strong>Predictores:</strong> 26 variables (depto, area, sexo, edad, educación, etnia, lengua, ocupación, ingresos,
+        pobreza y condiciones de vivienda). Categóricas → ordinales; numéricas → <code>float</code>; faltantes → mediana.</li>
+  </ul>
+  <div class="card azul">
+    <strong>Split estratificado 80/20:</strong> <code>train_test_split(test_size=0.2, random_state=42, stratify=y)</code> +
+    <code>StandardScaler</code> ajustado solo con train. <strong>Train: 9,886 / Test: 2,472.</strong>
+  </div>
+  <h3>6.2 Modelos</h3>
+  <table>
+    <tr><th>Modelo</th><th>Hiperparámetros clave</th></tr>
+    <tr><td><strong>Regresión Logística</strong> (interpretable)</td><td><code>max_iter=1500</code>, <code>class_weight="balanced"</code>, <code>random_state=42</code></td></tr>
+    <tr><td><strong>Random Forest</strong></td><td><code>n_estimators=300</code>, <code>max_depth=12</code>, <code>min_samples_leaf=5</code>, <code>class_weight="balanced"</code>, <code>n_jobs=-1</code></td></tr>
+  </table>
+  <h3>6.3 Métricas finales (conjunto de TEST, 20%)</h3>
+  <table class="metricas">
+    <tr><th>Modelo</th><th>Exactitud</th><th>Precisión</th><th>Sensibilidad</th><th>F1</th><th>AUC-ROC</th></tr>
+    <tr><td>Regresión Logística</td><td>0.6367</td><td>0.2238</td><td>0.5918</td><td>0.3248</td><td>0.6522</td></tr>
+    <tr><td>Random Forest</td><td><strong>0.8022</strong></td><td><strong>0.3025</strong></td><td>0.2603</td><td>0.2798</td><td><strong>0.6555</strong></td></tr>
+  </table>
+  <p>RF alcanza mayor exactitud (0.80), precisión (0.30) y AUC-ROC (0.66). La regresión logística es más sensible (0.59),
+  útil para no perder casos de discriminación. La clase minoritaria (14.77%) explica la precisión baja.</p>
+  <div class="grid2">
+    <div><img class="graf" src="../imagenes/grafico_metricas.png" alt="Comparativa de métricas"></div>
+    <div><img class="graf" src="../imagenes/grafico_confusion.png" alt="Matrices de confusión"></div>
+  </div>
+  <h3>6.4 Curvas ROC e importancia de variables</h3>
+  <div class="grid2">
+    <div><img class="graf" src="../imagenes/grafico_roc.png" alt="Curvas ROC"></div>
+    <div><img class="graf" src="../imagenes/grafico_importancia.png" alt="Importancia de variables (RF)"></div>
+  </div>
+  <h3>6.5 Interpretabilidad (SHAP)</h3>
+  <p>Se complementa con <code>SHAP TreeExplainer</code> sobre el Random Forest (muestra de 1,000 test).</p>
+  <img class="graf" src="../imagenes/grafico_shap.png" alt="SHAP summary plot">
+  <h3>6.6 Predicciones</h3>
+  <p>Para toda la muestra se exportan probabilidades de cada modelo (<code>prob_disc_logit</code>, <code>prob_disc_rf</code>)
+  y sus clasificaciones binarias → <code>predicciones.csv</code>.</p>
+
+  <h2 class="seccion" id="p4">7. Parte 4 — Storytelling y publicación (25%)</h2>
+  <ul>
+    <li>PDF <code>storytelling_discriminacion.pdf</code> (máx. 15 diapositivas, orientación apaisada) con ReportLab:
+        hallazgos, mapa territorial, tabla de métricas, importancia de variables y ≥ 3 recomendaciones.</li>
+    <li>El storytelling referencia métricas de <strong>TEST (20%)</strong> y los departamentos min/max mediante
+        <code>idxmin()/idxmax()</code>.</li>
+    <li>Publicación de todos los entregables en el repositorio público de GitHub.</li>
+  </ul>
+  <p>Capturas de cada etapa en carpetas <code>Capturas_Parte1..Parte4</code> (y <code>Capturas/</code> por fase).</p>
+
+  <h2 class="seccion" id="resultados">8. Resultados clave y hallazgos</h2>
+  <div class="resalta">
+    <ul>
+      <li>Prevalencia nacional de discriminación (12 meses): <strong>≈ 14.8%</strong> de la población.</li>
+      <li>Motivo más frecuente: <strong>condición económica o social</strong> (4.93%), seguido de edad (4.31%) y color de piel (3.75%).</li>
+      <li>Departamento con mayor tasa reportada: <strong>La Paz (23.3%)</strong>; menor: <strong>Tarija (8.2%)</strong>.</li>
+      <li>Víctimas de algún delito en 12 meses: <strong>13.25%</strong>; inseguridad al caminar de noche: <strong>49.2%</strong> (supera 45% en varios departamentos).</li>
+      <li>Denuncia formal entre quienes sufrieron discriminación: apenas <strong>0.71%</strong> → brecha de denuncia.</li>
+      <li>Variables más influyentes (RF): edad, sexo, nivel educativo e ingreso per cápita. Ser mujer, joven, indígena o de menor ingreso se asocia a mayor probabilidad de discriminación.</li>
+    </ul>
+  </div>
+
+  <h2 class="seccion" id="recomendaciones">9. Recomendaciones de política pública</h2>
+  <ol>
+    <li><strong>Fortalecer los mecanismos de denuncia</strong> (Defensorías y Policía Boliviana) y reducir el miedo a denunciar, dada la brecha del 0.71%.</li>
+    <li><strong>Campañas de sensibilización contra el racismo</strong> (Ley N° 045) focalizadas en los departamentos con mayor prevalencia (La Paz, entre los primeros).</li>
+    <li><strong>Políticas de inclusión laboral y educativa</strong> para pueblos indígenas y jóvenes urbanos.</li>
+    <li><strong>Mejorar iluminación y videovigilancia</strong> en zonas percibidas como inseguras (la inseguridad nocturna supera 45%).</li>
+    <li><strong>Generar métricas oficiales periódicas</strong> con desagregación por motivo, departamento y sexo.</li>
+  </ol>
+
+  <h2 class="seccion" id="conclusiones">10. Conclusiones</h2>
+  <ul>
+    <li>La discriminación y la inseguridad son fenómenos <strong>medibles y predecibles</strong> con los datos de la EH2025.</li>
+    <li>Los motivos más frecuentes (condición económica, edad, color de piel) muestran patrones de <strong>desigualdad estructural</strong>.</li>
+    <li>Los modelos (RL y RF) logran AUC-ROC competitivo (~0.65) e identifican los factores determinantes
+        (edad, sexo, educación, ingreso).</li>
+    <li>La interpretabilidad (importancia de variables, coeficientes y SHAP) genera insumos accionables para política pública.</li>
+    <li>El trabajo cumple íntegramente la rúbrica: preprocesamiento, EDA con 4+ visualizaciones, 2 modelos con evaluación completa y storytelling publicado en GitHub.</li>
+  </ul>
+
+  <h2 class="seccion" id="entregables">11. Entregables y publicación GitHub</h2>
+  <table>
+    <tr><th>Entregable</th><th>Ruta en el repositorio</th></tr>
+    <tr><td>Notebook Jupyter (Colab)</td><td><code>notebooks/EH2025_Analisis_ML_Caso3.ipynb</code></td></tr>
+    <tr><td>Dataset procesado</td><td><code>data/procesado/dataset_procesado.csv</code></td></tr>
+    <tr><td>Predicciones</td><td><code>outputs/predicciones.csv</code></td></tr>
+    <tr><td>Mapa interactivo</td><td><code>data/procesado/mapa_discriminacion.html</code></td></tr>
+    <tr><td>Storytelling PDF</td><td><code>outputs/storytelling_discriminacion.pdf</code></td></tr>
+    <tr><td>Visualizaciones</td><td><code>imagenes/</code> (12 PNG)</td></tr>
+    <tr><td>Documentación</td><td><code>docs/README.md</code></td></tr>
+    <tr><td>Evidencias paso a paso</td><td><code>Capturas_Parte1..Parte4/</code></td></tr>
+    <tr><td>Dependencias</td><td><code>requirements.txt</code></td></tr>
+  </table>
+  <p>
+    Repositorio público: <a href="https://github.com/hithub24CH/EH2025_ML_Caso3_Discriminacion">github.com/hithub24CH/EH2025_ML_Caso3_Discriminacion</a>
+    — rama <code>main</code>, commit <code>a914f6a</code> (verificado y publicado).
+  </p>
+
+  <h2 class="seccion" id="referencias">12. Referencias y citación</h2>
+  <p style="background:#fff;border:1px solid var(--borde);padding:12px;border-radius:6px">
+    <em>Fuente: Instituto Nacional de Estadística, Encuesta de Hogares 2025 -
+    <a href="http://anda.ine.gob.bo/index.php/catalog/256">http://anda.ine.gob.bo/index.php/catalog/256</a>.
+    Fecha de acceso: septiembre 2026.</em>
+  </p>
+  <p>
+    <span class="tag">Pyreadstat</span> <span class="tag">Pandas</span> <span class="tag">NumPy</span>
+    <span class="tag">Matplotlib</span> <span class="tag">Seaborn</span> <span class="tag">Plotly</span>
+    <span class="tag">Folium</span> <span class="tag">Scikit-learn</span> <span class="tag">SHAP</span>
+    <span class="tag">ReportLab</span> <span class="tag">Google Colab</span>
+  </p>
+
+  <div class="foot">
+    Reporte generado para la Sesión 2 — Módulo 3 · Análisis de Datos Masivos con Machine Learning · Caso 3.<br>
+    Autor: JOSE CHIPANA · Septiembre 2026 · Datos: EH2025 INE Bolivia (ANDA), acceso septiembre 2026.
+  </div>
+</div>
+
+</body>
+</html>
